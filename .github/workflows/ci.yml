@@ -71,6 +71,7 @@ jobs:
 
   macOS11:
     runs-on: macos-11.0
+    if: false # not public yet
     needs: [macOS10] # macOS10 must pass first
     steps:
       - uses: actions/checkout@v2
@@ -115,7 +116,7 @@ jobs:
 
   Release:
     runs-on: ubuntu-latest
-    needs: [Linux, macOS10, macOS11, iOS, tvOS, watchOS, Windows10]
+    needs: [Linux, macOS10, iOS, tvOS, watchOS, Windows10]
 
     steps:
       - name: Release
